@@ -1,2 +1,6 @@
 /.bundle
 /vendor/bundle
+
+GPATH
+GRTAGS
+GTAGS
