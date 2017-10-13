@@ -1,5 +1,10 @@
 language: ruby
 
+before_install:
+  - pushd ./tools/test_roma_server
+  - ./run_test_roma.sh
+  - popd
+
 rvm:
   - 2.1.5
   - 2.4.1
