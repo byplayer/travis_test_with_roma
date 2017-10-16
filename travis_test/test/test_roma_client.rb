@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 require 'bundler/setup'
 require 'test/unit'
 require 'roma/client'
