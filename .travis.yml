@@ -6,6 +6,11 @@ before_install:
   - popd
   - cd travis_test
 
+after_failure:
+  - pushd ../tools/test_roma_server
+  - cat app/logs/*.log
+  - popd
+
 rvm:
   - 2.1.5
   - 2.2.8
