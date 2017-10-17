@@ -9,6 +9,7 @@ before_install:
 after_failure:
   - pushd ../tools/test_roma_server
   - lsof -i:11211
+  - ss | grep 11211
   - cat app/logs/*.log
   - popd
 
