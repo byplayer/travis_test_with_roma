@@ -3,12 +3,14 @@ language: ruby
 before_install:
   - pushd ./tools/test_roma_server
   - ./run_test_roma.sh
+  - cat app/logs/*.log
   - popd
   - cd travis_test
 
 after_failure:
   - pushd ../tools/test_roma_server
   - cat app/logs/*.log
+  - lsof -i:11211
   - popd
 
 rvm:
