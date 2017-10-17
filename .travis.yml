@@ -2,6 +2,10 @@ language: ruby
 
 before_install:
   - pushd ./tools/test_roma_server
+  - lsof -i:11211
+  - ss | grep 11211
+  - lsof -i:11311
+  - ss | grep 11311
   - ./run_test_roma.sh
   - popd
   - cd travis_test
@@ -10,6 +14,8 @@ after_failure:
   - pushd ../tools/test_roma_server
   - lsof -i:11211
   - ss | grep 11211
+  - lsof -i:11311
+  - ss | grep 11311
   - ping -c 1 localhost
   - cat app/logs/*.log
   - popd
