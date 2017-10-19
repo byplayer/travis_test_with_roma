@@ -32,6 +32,7 @@ MAX_RETRY=30
 
 for ((i=0;i<${MAX_RETRY};++i))
 do
+    bundle exec roma-adm 'get test' 11211
     set +e
     bundle exec roma-adm 'get test' 11211 | grep ERROR
     RES=$?
