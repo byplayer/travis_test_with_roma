@@ -4,7 +4,7 @@ require 'bundler/setup'
 require 'test/unit'
 require 'roma/client'
 
-
+# test for ROMA client
 class RomaClientTest < Test::Unit::TestCase
   def test_get_set
     rc = Roma::Client::RomaClient.new(%w(localhost_11211 localhost_11311))
