@@ -6,14 +6,14 @@ bundle install --path vendor/bundle
 
 pushd app
 
-if [ -f routing/localhost_11211.route ]; then
+if [ -f routing/localhost_11311.route ]; then
     echo routing table was already created
 else
-    bundle exec mkroute localhost_11211 localhost_11311 --replication_in_host
+    bundle exec mkroute localhost_11311 localhost_11411 --replication_in_host
     mv *.route routing
 fi
 
-for port in 11211 11311; do
+for port in 11311 11411; do
     set +e
     ps aux | grep romad | grep localhost | grep $port > /dev/null 2>&1
     result=$?
@@ -32,9 +32,9 @@ MAX_RETRY=30
 
 for ((i=0;i<${MAX_RETRY};++i))
 do
-    bundle exec roma-adm 'get test' 11211
+    bundle exec roma-adm 'get test' 11311
     set +e
-    bundle exec roma-adm 'get test' 11211 | grep ERROR
+    bundle exec roma-adm 'get test' 11311 | grep ERROR
     RES=$?
     set -e
     if [ $RES -eq 1 ]; then
