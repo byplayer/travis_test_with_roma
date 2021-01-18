@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     power_assert (1.1.0)
-    rake (12.1.0)
+    rake (12.3.3)
     roma-client (0.4.4)
     test-unit (3.2.6)
       power_assert
